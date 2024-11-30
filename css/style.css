@@ -182,3 +182,74 @@ body {
 .des:hover {
   color: #007BFF; /* Textfarbe beim Hover */
 }
+
+
+/* Standard-Stile (Desktop-Ansicht bleiben erhalten) */
+
+/* Mobile-Ansicht: Anpassung für kleine Bildschirme */
+@media (max-width: 768px) {
+  body {
+    display: flex;
+    flex-direction: column; /* Elemente untereinander anordnen */
+    align-items: center;    /* Zentriert ausrichten */
+  }
+
+  .container {
+    position: static; /* Zentrierung zurücksetzen */
+    width: 100%;      /* Breite des Containers an Bildschirm anpassen */
+    height: auto;     /* Höhe flexibel */
+    box-shadow: none; /* Schatten für Mobil entfernen, falls gewünscht */
+  }
+
+  .container .slide {
+    display: flex;
+    flex-direction: column; /* Slider untereinander statt nebeneinander */
+    align-items: center;
+    gap: 20px; /* Abstand zwischen den Items */
+    width: 100%;
+  }
+
+  .container .slide .item {
+    position: static; /* Absolute Positionierung entfernen */
+    transform: none;  /* Transformation zurücksetzen */
+    width: 90%;       /* Breite an Bildschirmgröße anpassen */
+    height: auto;     /* Höhe dynamisch */
+    border-radius: 10px;
+    margin: 0 auto;   /* Zentriert ausrichten */
+  }
+
+  /* Content-Stil anpassen */
+  .item .content {
+    position: static; /* Absolute Positionierung entfernen */
+    transform: none;  /* Transformation zurücksetzen */
+    width: 100%;      /* Vollständig ausnutzen */
+    text-align: center; /* Zentrierter Text */
+    padding: 15px;
+  }
+
+  /* Links nach oben verschieben */
+  .container .slide .item:nth-child(2) .content {
+    display: block;
+  }
+
+  /* Pfeile ganz unten zentrieren */
+  .button {
+    position: static; /* Absolute Positionierung entfernen */
+    width: 100%;      /* Breite der Seite ausnutzen */
+    display: flex;
+    justify-content: space-between; /* Pfeile links und rechts ausrichten */
+    padding: 10px 20px;
+    box-sizing: border-box; /* Innenabstände einbeziehen */
+  }
+
+  .button button {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%; /* Runde Buttons */
+    border: none;       /* Keine Umrandung */
+    font-size: 20px;
+    background: #ababab;
+    color: #fff;
+  }
+}
+
